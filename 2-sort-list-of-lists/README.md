@@ -16,9 +16,10 @@ solve it. Here is Hett’s statement of the problem:
     later, or vice versa.
 
     Example:
-    lsort([[a,b,c],[d,e],[f,g,h],[d,e],[i,j,k,l],[m,n],[o]],L).  L
-    = [[o], [d, e], [d, e], [m, n], [a, b, c], [f, g, h], [i, j, k,
-    l]]
+    
+    lsort([[a,b,c],[d,e],[f,g,h],[d,e],[i,j,k,l],[m,n],[o]],L)
+    
+    L = [[o], [d, e], [d, e], [m, n], [a, b, c], [f, g, h], [i, j, k, l]]
     
     b) Again, we suppose that a list (InList) contains elements that
     are lists themselves. But this time the objective is to sort the
@@ -28,8 +29,10 @@ solve it. Here is Hett’s statement of the problem:
     later.
 
     Example:
-    lfsort([[a,b,c],[d,e],[f,g,h],[d,e],[i,j,k,l],[m,n],[o]],L).  L =
-    [[i, j, k, l], [o], [a, b, c], [f, g, h], [d, e], [d, e], [m, n]]
+    
+    lfsort([[a,b,c],[d,e],[f,g,h],[d,e],[i,j,k,l],[m,n],[o]],L)
+    
+    L = [[i, j, k, l], [o], [a, b, c], [f, g, h], [d, e], [d, e], [m, n]]
 
     Note that in the above example, the first two lists in the result
     L have length 4 and 1, both lengths appear just once. The third
