@@ -1,4 +1,4 @@
-This problem is excerpted, unedited, from the [Programming Praxis](https://programmingpraxis.com) website which is under a [Creative Commons Attribution-Noncommercial-Share Alike 3.0 United States License](https://creativecommons.org/licenses/by-nc-sa/3.0/us/).
+This problem is excerpted, unedited, from the [Programming Praxis](https://programmingpraxis.com) website, which is under a [Creative Commons Attribution-Noncommercial-Share Alike 3.0 United States License](https://creativecommons.org/licenses/by-nc-sa/3.0/us/).
 
 ## Hett’s Problem 1.28
 *August 9, 2011*
