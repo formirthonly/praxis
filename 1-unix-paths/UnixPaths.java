@@ -22,7 +22,7 @@ import java.util.List;
  */
 public class UnixPaths {
 
-    public static void paths(String cd, String tp) {
+    public static String paths(String cd, String tp) {
         String[] targetPath = tp.split("/");
         String[] newCd = cd.split("/");
         List<String> directories = new ArrayList<String>();
@@ -36,6 +36,6 @@ public class UnixPaths {
                directories.add(path);
             }
         }
-        System.out.println(newCdString + "/"  + String.join("/", directories));
+        return newCdString + "/"  + String.join("/", directories);
     }
 }
