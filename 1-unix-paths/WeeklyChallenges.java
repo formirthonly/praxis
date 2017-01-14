@@ -25,6 +25,5 @@ public class WeeklyChallenges {
         unixPath.paths("/home/root/", "./../hello1/hello2");
         unixPath.paths("/home/root/", "../hello1/hello2");
         unixPath.paths("/home/root/", "../../hello1/hello2");
-        
     }
 }
