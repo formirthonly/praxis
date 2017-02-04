@@ -21,18 +21,14 @@
 
 (define (flsort lislis)
   (let ((freq-list '()))
-    (map (lambda (x)
-           (if (eq? (assoc-ref freq-list (length x)) #f)
-               (set! freq-list
-                     (assoc-set! freq-list
-                                 (length x)
-                                 (list x)))
-               (set! freq-list
-                     (assoc-set! freq-list
-                                 (length x)
-                                 (cons x (assoc-ref
-                                          freq-list
-                                          (length x)))))))
+    (map (lambda (lis)
+           (let* ((len (length lis))
+                  (valis (assoc-ref freq-list len)))
+             (if (eq? valis #f)
+                 (set! freq-list
+                       (assoc-set! freq-list len (list lis)))
+                 (set! freq-list
+                       (assoc-set! freq-list len (cons lis valis))))))
          lislis)
     (flatmap (lambda (y)
                (cdr y))
@@ -63,5 +59,3 @@
                 (a a a a a a)))
 
 (flsort flsme)
-
-;; I reserve the right to refactor this later ;-P
