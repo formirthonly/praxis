@@ -1,0 +1,31 @@
+* Pearson Hashing
+Cryptographic hashes, also called message digests, are ubiquitous in
+modern cryptography — Brce Schneier calls them “the workhorses of
+modern cryptography” — used among other things in digital signatures,
+message authentication codes, as fingerprints to detect duplicate
+data, and as checksums to detect data corruption. Today we look at a
+simple example of a hash function, not suitable for cryptography, but
+useful for non-cryptographic purposes.
+
+Peter Pearson describes a hash function based on a permutation table
+Tof the numbers 0 inclusive to 256 exclusive. Starting from an initial
+hash of 0, each byte of the message is accessed in order, added to the
+current hash mod 256, then the hash is replaced by the value in the
+permutation table corresponding to that sum. In some implementations,
+including Pearson’s original, the two bytes are XOR’ed rather than
+added mod 256.
+
+If eight bits isn’t enough, Pearson gives a simple algorithm for
+extending the algorithm to sixteen bits. First, compute the normal
+8-bit hash. Then, add 1 (mod 256) to the first character of the
+string, and compute the normal 8-bit hash of the modified string;
+since a modification to a single bit provides a large change in the
+hash value, the two hashes will be independent of each other. Finally,
+concatenate the two hashes. Pearson doesn’t mention it, but this
+scheme can be extended to any multiple of eight bits.
+
+Your task is to write a program that computes the 8-bit and 16-bit
+Pearson hashes of an input string, given a suitable permutation
+table. When you are finished, you are welcome to [[https://programmingpraxis.com/2018/05/25/pearson-hashing/2/][read]] or [[https://ideone.com/hi4xWM][run]] a
+suggested solution, or to post your own solution or discuss the
+exercise in the comments below.
