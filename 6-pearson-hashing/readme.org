@@ -7,8 +7,8 @@ data, and as checksums to detect data corruption. Today we look at a
 simple example of a hash function, not suitable for cryptography, but
 useful for non-cryptographic purposes.
 
-Peter Pearson describes a hash function based on a permutation table
-Tof the numbers 0 inclusive to 256 exclusive. Starting from an initial
+Peter Pearson [[https://www.epaperpress.com/vbhash/download/p677-pearson.pdf][describes]] a hash function based on a permutation table T
+of the numbers 0 inclusive to 256 exclusive. Starting from an initial
 hash of 0, each byte of the message is accessed in order, added to the
 current hash mod 256, then the hash is replaced by the value in the
 permutation table corresponding to that sum. In some implementations,
