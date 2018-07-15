@@ -1,0 +1,39 @@
+* Blockchain
+In the previous exercise we studied a simple cryptographic hash. Today
+we will use that hash to write an equally-simple blockchain, which is
+the algorithm underneath Bitcoin and other cryptocurrencies.
+
+A blockchain is a publicly-readable database in which data items are
+stored in blocks in an immutable, verifiable chain. The database
+admits two operations: adjoin, to add a new data item to the database,
+and validate, to verify that the database is complete and
+incorrupt. There is no delete operation; once a datum is added to the
+database, it can never be removed. There is no update operation; once
+a datum is added to the database, it can never be modified. And there
+is no sort operation; once a datum is added to the database, it can
+never be moved within the chain.
+
+In our implementation, each block in the chain contains four fields:
+an index number, which starts from zero and is incremented each time a
+new datum is added; a datum, which can be anything (for simplicity, we
+restrict the data to strings); the previous hash number, and the
+current hash number, which we will discuss below.
+
+The adjoin operation takes a blockchain and a datum and returns a new
+blockchain, which is a linked list of blocks; the first block in a
+blockchain has index 0, datum “Genesis Block”, and previous hash
+number 0. The current hash number is a Pearson hash of the
+concatenated block number, the datum, and the previous hash number. To
+adjoin a new block, compute the current hash number, allocate a block,
+attach it to the head of the blockchain, and return the new
+blockchain.
+
+The validate operation recalculates the current hash number at each
+block in the chain. If any is incorrect, it halts and reports the
+blockchain is corrupt. Otherwise, if it reaches the genesis block
+without finding an error, it reports the blockchain is valid.
+
+Your task is to write a program that implements the simple blockchain
+described above. When you are finished, you are welcome to [[https://programmingpraxis.com/2018/05/29/blockchain/2/][read]] or [[https://ideone.com/GozM0B][run]]
+a suggested solution, or to post your own solution or discuss the
+exercise in the comments below.
